@@ -8,22 +8,26 @@
 </head>
 <body>
     <h1 id="contador">10</h1>
+    <button id="iniciar" onclick="inicio()">INICIAR</button>
     <button id="clicker" onclick="sumador()">Haz click aquí para calcular</button>
     <p id="Número">0</p>
     <p id="clicks/seg">0</p>
     <script>
         //CONTADOR
-        let tiempo=9
-        const contador=document.getElementById("contador")
-        const cuentaAtras=setInterval(function(){
+        function inicio(){
+            let tiempo=9
+            const contador=document.getElementById("contador")
             contador.textContent=tiempo
-            tiempo--
-            if(tiempo<0){
-                clearInterval(cuentaAtras)
-                contador.textContent="Se acabó el tiempo"
-                document.getElementById("clicker").disabled=true
-            }
-        },1000)
+            const cuentaAtras=setInterval(function(){
+                contador.textContent=tiempo
+                tiempo--
+                if(tiempo<=0){
+                    clearInterval(cuentaAtras)
+                    contador.textContent="Se acabó el tiempo"
+                    document.getElementById("clicker").disabled=true
+                }
+            },1000)
+        }
         //SUMADOR
         let numero=document.getElementById("Número")
         let clicks=0

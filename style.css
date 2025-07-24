@@ -43,3 +43,13 @@ p {
     font-size: 1.3rem;
     margin: 5px 0;
 }
+#iniciar{
+    background-color: rgb(22, 156, 22);
+    transition: background-color 0.3s ease;
+    transition:scale 0.3s ease;
+}
+#iniciar:hover{
+    background-color: rgb(35, 235, 35);
+    scale: 1.5;
+    
+}
